@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheEz - Sala de Espera</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/lobby.css" />
+  </head>
+  <body>
+    <header class="cabecera-lobby">
+      <h1 class="titulo-principal">CheEz</h1>
+      <span id="alias-actual" class="alias-header"></span>
+    </header>
+
+    <main class="contenedor-lobby">
+      <section class="columna-lobby" id="seccion-invitaciones">
+        <h2 class="subtitulo-lobby">Invitaciones</h2>
+        <div class="lista-interactiva" id="lista-invitaciones">
+        </div>
+      </section>
+
+      <section class="columna-lobby" id="seccion-activos">
+        <h2 class="subtitulo-lobby">Jugadores activos</h2>
+        <div class="lista-interactiva" id="lista-jugadores">
+        </div>
+      </section>
+    </main>
+
+    <script src="js/lobby.js"></script>
+  </body>
+</html>

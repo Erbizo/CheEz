@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheEz - Partida</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/juego.css" />
+  </head>
+  <body>
+    <header class="cabecera-juego">
+      <h1 class="titulo-principal">CheEz</h1>
+      <span id="alias-actual" class="alias-header"></span>
+    </header>
+    <main class="contenedor-juego">
+      <section class="panel-jugador" id="panel-local">
+        <span class="nombre-jugador-caja" id="nombre-blancas">Blancas</span>
+        <div id="acciones-local" class="acciones-local">
+          <button id="btn-tablas" class="boton-verde">Tablas</button>
+          <button id="btn-rendirse" class="boton-rojo">Rendirse</button>
+        </div>
+      </section>
+      <div id="tablero" class="tablero">
+        <div id="aviso-invalido" class="aviso-invalido" aria-live="polite">⚠️ Movimiento no válido</div>
+      </div>
+      <section class="panel-jugador" id="panel-rival">
+        <span class="nombre-jugador-plano" id="nombre-negras">Negras</span>
+      </section>
+    </main>
+    <div id="modal-fin" class="modal-fin oculto" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <div id="modal-caja" class="modal-caja">
+        <p id="modal-titulo" class="modal-titulo"></p>
+        <div id="modal-botones" class="modal-botones">
+          <button id="btn-volver-lobby"  class="boton-verde"  onclick="volverAlLobby()">Volver</button>
+          <button id="btn-aceptar-tablas" class="boton-verde" onclick="responderTablas(true)">Aceptar</button>
+          <button id="btn-rechazar-tablas" class="boton-rojo" onclick="responderTablas(false)">Rechazar</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/juego.js"></script>
+  </body>
+</html>

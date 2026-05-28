@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheEz - Ingreso</title>
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body>
+    <main class="contenedor-login">
+      <h1 class="titulo-principal">CheEz</h1>
+
+      <div class="caja-ingreso">
+        <div class="grupo-control">
+          <label for="input-alias" class="label-oculto">Alias de jugador</label>
+          <input
+            type="text"
+            id="input-alias"
+            placeholder="Ingresa el alias ..."
+            maxlength="8"
+            required
+          />
+          <button
+            id="btn-aceptar"
+            class="boton-verde"
+          >
+            Aceptar
+          </button>
+        </div>
+        <p id="mensaje-error" class="texto-error" style="display: none"></p>
+      </div>
+    </main>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>
