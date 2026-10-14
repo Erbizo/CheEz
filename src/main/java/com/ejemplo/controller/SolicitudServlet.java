@@ -33,6 +33,7 @@ public class SolicitudServlet extends HttpServlet {
                     .listarPendientesPorReceptor((String) session.getAttribute("alias"));
             out.print(new Gson().toJson(lista));
         } catch (SQLException e) {
+            e.printStackTrace();
             response.setStatus(500);
             out.print("[]");
         }
@@ -91,6 +92,7 @@ public class SolicitudServlet extends HttpServlet {
                 out.print("{\"ok\":false}");
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             response.setStatus(500);
             out.print("{\"ok\":false}");
         }

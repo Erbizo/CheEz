@@ -37,6 +37,7 @@ public class LobbyServlet extends HttpServlet {
                     .collect(Collectors.toList());
             out.print(new Gson().toJson(otros));
         } catch (SQLException e) {
+            e.printStackTrace();
             response.setStatus(500);
             out.print("{\"ok\":false,\"mensaje\":\"Error de base de datos\"}");
         }

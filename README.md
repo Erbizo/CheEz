@@ -20,9 +20,6 @@ jakartaee-docker-compose-project/
 ├── pom.xml
 ├── informacion.md
 ├── README.md
-├── mysql/
-│   └── init/
-│       └── 01-bd1.sql
 └── src/
     └── main/
         ├── java/
@@ -35,7 +32,8 @@ jakartaee-docker-compose-project/
         │       │   ├── PartidaServlet.java
         │       │   ├── JuegoServlet.java
         │       │   ├── TablasServlet.java
-        │       │   └── SessionListener.java
+        │       │   ├── SessionListener.java
+        │       │   └── InicioBD.java
         │       └── model/
         │           ├── ConexionBD.java
         │           ├── Jugador.java
@@ -47,6 +45,8 @@ jakartaee-docker-compose-project/
         │           ├── Solicitud.java
         │           ├── SolicitudDAO.java
         │           └── ValidadorMovimiento.java
+        ├── resources/
+        │   └── schema.sql
         └── webapp/
             ├── css/
             │   ├── general.css
@@ -73,6 +73,8 @@ Desde la carpeta del proyecto:
 ```bash
 docker compose up --build
 ```
+
+Al arrancar, la aplicacion crea las tablas que falten (`InicioBD` ejecuta `schema.sql`), asi que no hace falta preparar la base de datos a mano.
 
 ## URLs
 

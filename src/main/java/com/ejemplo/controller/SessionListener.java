@@ -20,6 +20,7 @@ public class SessionListener implements HttpSessionListener {
             try {
                 new JugadorDAO().eliminar(alias);
             } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }

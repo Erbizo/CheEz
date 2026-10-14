@@ -100,6 +100,7 @@ public class JuegoServlet extends HttpServlet {
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             response.setStatus(500);
             out.print("{\"resultado\":\"invalido\"}");
         }

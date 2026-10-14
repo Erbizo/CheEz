@@ -1,9 +1,9 @@
-CREATE TABLE jugadores (
+CREATE TABLE IF NOT EXISTS jugadores (
     alias VARCHAR(8) PRIMARY KEY,
     fecha_ingreso TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE solicitudes (
+CREATE TABLE IF NOT EXISTS solicitudes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     alias_emisor VARCHAR(8),
     alias_receptor VARCHAR(8),
@@ -13,7 +13,7 @@ CREATE TABLE solicitudes (
     FOREIGN KEY (alias_receptor) REFERENCES jugadores(alias) ON DELETE CASCADE
 );
 
-CREATE TABLE partidas (
+CREATE TABLE IF NOT EXISTS partidas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     alias_blancas VARCHAR(8) NULL,
     alias_negras VARCHAR(8) NULL,
@@ -23,7 +23,7 @@ CREATE TABLE partidas (
     FOREIGN KEY (alias_negras) REFERENCES jugadores(alias) ON DELETE SET NULL
 );
 
-CREATE TABLE movimientos (
+CREATE TABLE IF NOT EXISTS movimientos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_partida INT,
     orden INT,

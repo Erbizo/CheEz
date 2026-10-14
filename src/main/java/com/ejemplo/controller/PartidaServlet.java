@@ -40,6 +40,7 @@ public class PartidaServlet extends HttpServlet {
                     out.print("{}");
                 }
             } catch (SQLException e) {
+                e.printStackTrace();
                 response.setStatus(500);
                 out.print("{\"ok\":false}");
             }
@@ -62,6 +63,7 @@ public class PartidaServlet extends HttpServlet {
             result.put("movimientos", movimientos);
             out.print(new Gson().toJson(result));
         } catch (SQLException | NumberFormatException e) {
+            e.printStackTrace();
             response.setStatus(500);
             out.print("{\"ok\":false}");
         }
@@ -95,6 +97,7 @@ public class PartidaServlet extends HttpServlet {
             new PartidaDAO().actualizar(idPartida, resultado);
             out.print("{\"ok\":true}");
         } catch (SQLException e) {
+            e.printStackTrace();
             response.setStatus(500);
             out.print("{\"ok\":false}");
         }

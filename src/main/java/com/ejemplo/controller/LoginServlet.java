@@ -45,6 +45,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("alias", alias);
             out.print("{\"ok\":true}");
         } catch (SQLException e) {
+            e.printStackTrace();
             response.setStatus(500);
             out.print("{\"ok\":false,\"mensaje\":\"Error de base de datos\"}");
         }
