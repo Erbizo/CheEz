@@ -13,7 +13,7 @@ public class ConexionBD {
     private static final String DB_PASSWORD = System.getenv().getOrDefault("MYSQLPASSWORD", System.getenv().getOrDefault("DB_PASSWORD", "root"));
 
     private static final String URL = "jdbc:mysql://" + DB_HOST + ":" + DB_PORT + "/" + DB_NAME
-            + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+            + "?sslMode=PREFERRED&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
     static {
         try {
